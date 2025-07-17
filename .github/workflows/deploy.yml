@@ -17,7 +17,13 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libudunits2-dev libgdal-dev libgeos-dev libproj-dev
+          sudo apt-get install -y \
+            libudunits2-dev \
+            libgdal-dev \
+            libgeos-dev \
+            libproj-dev \
+            libprotobuf-dev \
+            protobuf-compiler
 
       - name: Restore R environment
         run: |
