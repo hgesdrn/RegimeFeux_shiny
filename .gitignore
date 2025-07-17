@@ -2,3 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# Exclure les libs locales de renv
+renv/library/
