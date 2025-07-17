@@ -3,12 +3,9 @@ library(leaflet)
 library(sf)
 library(dplyr)
 library(ggplot2)
-library(geojsonio)
 
-# Charger les données depuis .geojson et sf
-zones_sf <- geojsonio::geojson_read("./Data/zones_styled.geojson", what = "sp") %>% 
-  st_as_sf()
-
+# Charger les données depuis GeoJSON avec sf
+zones_sf <- st_read("./Data/zones_styled.geojson", quiet = TRUE)
 qc_contour <- readRDS("./Data/Province_contourSimp_wgs84.rds")
 
 zone_centroids <- st_point_on_surface(zones_sf) %>%
@@ -73,7 +70,6 @@ server <- function(input, output, session) {
         weight = 1,
         fill = FALSE
       ) %>%
-      # Utiliser addPolygons avec les attributs du geojson
       addPolygons(
         data = zones_sf,
         layerId = ~ZONE_ID,
