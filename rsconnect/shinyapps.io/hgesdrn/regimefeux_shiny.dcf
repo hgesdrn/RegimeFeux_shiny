@@ -1,0 +1,10 @@
+name: regimefeux_shiny
+title:
+username: hgesdrn
+account: hgesdrn
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15091077
+bundleId: 10633225
+url: https://hgesdrn.shinyapps.io/regimefeux_shiny/
+version: 1
